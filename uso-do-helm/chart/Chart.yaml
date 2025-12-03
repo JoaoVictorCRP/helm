@@ -1,0 +1,12 @@
+apiVersion: v2
+name: giropops-senhas
+description: Gerador de Senhas criado pela LinuxTips.
+version: "1.0" # versão do chart
+appVersion: "1.0" # versão da aplicação
+sources:
+  - https://github.com/badtuxx/giropops-senhas
+keywords: # palavras-chave para facilitar a busca no repositório de charts
+  - senhas
+  - gerador
+  - giropops
+  - linuxTips
