@@ -5,7 +5,7 @@ metadata:
     app: giropops-senhas
   name: {{ .Values.giropopsSenhas.name }} # Usando valor do values.yaml 
 spec:
-  replicas: 2
+  replicas: {{ .Values.giropopsSenhas.replicas }}
   selector:
     matchLabels:
       app: giropops-senhas

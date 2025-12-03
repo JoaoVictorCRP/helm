@@ -2,6 +2,7 @@
 giropopsSenhas:
   name: "giropops-senhas-helm"
   image: "linuxtips/giropops-senhas:1.0"
+  replicas: 2
 
 redis:
   name: "redis-helm"
