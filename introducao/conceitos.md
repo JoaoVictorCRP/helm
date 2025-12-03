@@ -3,6 +3,7 @@
 O Helm é uma ferramenta de gerenciamento de pacotes para Kubernetes que facilita a instalação, atualização e gerenciamento de aplicações dentro de clusters Kubernetes. Vejamos seus principais conceitos:
 
 - **Chart**: Um Chart é um pacote pré-configurado que contém todos os recursos necessários para implantar uma aplicação no Kubernetes. Ele inclui templates de arquivos YAML, valores padrão e metadados, podemos pensar nele como um "pacote de software".
+  - Charts normalmente são compostos por um conjunto de arquivos que definem a aplicação, e um conjunto de templates que definem como a aplicação será instalada no Kubernetes.
 
 - **Release**: Uma Release é uma instância específica de um Chart implantado em um cluster Kubernetes. Cada vez que você instala um Chart, uma nova Release é criada, permitindo múltiplas implantações do mesmo Chart **com diferentes configurações**.
   - Imagine um chart de MySQL. Você pode ter várias releases desse chart, cada uma com diferentes configurações, como nomes de banco de dados ou credenciais.
