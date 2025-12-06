@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: giropops-senhas
+    app: {{ .Values.giropopsSenhas.labels.app }}
   name: {{ .Values.giropopsSenhas.name }} # Usando valor do values.yaml 
 spec:
   replicas: {{ .Values.giropopsSenhas.replicas }}
@@ -20,3 +20,10 @@ spec:
         ports:
         - containerPort: 5000
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: {{ .Values.giropopsSenhas.resources.requests.memory }}
+            cpu: {{ .Values.giropopsSenhas.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.giropopsSenhas.resources.limits.memory }}
+            cpu: {{ .Values.giropopsSenhas.resources.limits.cpu }}

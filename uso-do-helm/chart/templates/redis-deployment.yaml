@@ -2,13 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: redis
+    {{ .Values.redis.labels | toYamlPretty }} # utilizando função toYamlPretty para formatar corretamente o YAML
   name: {{ .Values.redis.name}}
 spec:
-  replicas: 1
+  replicas: {{ .Values.redis.replicas }}
   selector:
     matchLabels:
-      app: redis
+      {{ .Values.redis.labels | toYamlPretty }}
   template:
     metadata:
       labels:
@@ -20,9 +20,9 @@ spec:
         ports:
           - containerPort: 6379
         resources:
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
           requests:
-            memory: "128Mi"
-            cpu: "250m"
+            memory: {{ .Values.redis.resources.requests.memory }}
+            cpu: {{ .Values.redis.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.redis.resources.limits.memory }}
+            cpu: {{ .Values.redis.resources.limits.cpu }}
